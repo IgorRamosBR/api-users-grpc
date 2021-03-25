@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto;
+
+service userService {
+  rpc findGithubUser(UserRequest) returns (UserResponse) {}
+}
+message UserRequest {
+    string username = 1;
+}
+
+message UserResponse {
+  string username = 1;
+  string name = 2;
+  string email = 3;
+  string company = 4;
+  string avatarUrl = 5;
+  string profileUrl = 6;
+  string repos_url = 7;
+  int64 followers = 8;
+  int64 following = 9;
+}
